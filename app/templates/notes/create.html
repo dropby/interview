@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create Note for {{ patient.name }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <p><textarea name="note_text" placeholder="Note text" required></textarea></p>
+    <p><input type="date" name="note_date" required></p>
+    <button type="submit">Create Note</button>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patient: {{ patient.name }}</h2>
+<p>Age: {{ patient.age }}</p>
+<p>Facility: {{ patient.facility_name }}</p>
+<p>Doctor: {{ patient.doctor_name }}</p>
+<p>Phone: {{ patient.phone }}</p>
+<p>Address: {{ patient.address }}</p>
+<p>Diagnoses: {{ patient.diagnoses }}</p>
+<p><a href="/notes/patient/{{ patient.id }}/">View Notes</a></p>
+<p><a href="/notes/create/{{ patient.id }}/">Add Note</a></p>
+{% endblock %}

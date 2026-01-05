@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Note for {{ note.patient_name }}</h2>
+<p>Date: {{ note.note_date }}</p>
+<p>Facility: {{ note.facility_name }}</p>
+<p>Created by: {{ note.created_by }}</p>
+<p>Note:</p>
+<blockquote>{{ note.note_text }}</blockquote>
+<form method="post" action="/notes/{{ note.id }}/delete/">
+    {% csrf_token %}
+    <button type="submit">Delete Note</button>
+</form>
+{% endblock %}

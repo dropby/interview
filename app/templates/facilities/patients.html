@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patients at {{ facility.name }}</h2>
+<ul>
+{% for p in patient_list %}
+    <li>
+        <a href="/patients/{{ p.id }}/">{{ p.name }}</a>
+        - Age: {{ p.age }}
+        - Doctor: {{ p.doctor }}
+    </li>
+{% empty %}
+    <li>No patients at this facility.</li>
+{% endfor %}
+</ul>
+{% endblock %}

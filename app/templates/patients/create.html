@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create Patient</h2>
+<form method="post">
+    {% csrf_token %}
+    <p><input type="text" name="name" placeholder="Patient Name" required></p>
+    <p><input type="number" name="age" placeholder="Age" required></p>
+    <p><input type="text" name="phone" placeholder="Phone" required></p>
+    <p><textarea name="address" placeholder="Address" required></textarea></p>
+    <p><input type="text" name="diagnoses" placeholder="Diagnoses (comma-separated)"></p>
+    <button type="submit">Create Patient</button>
+</form>
+{% endblock %}

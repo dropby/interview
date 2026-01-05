@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ facility_name }}</h2>
+<p>Address: {{ facility_address }}</p>
+<p>Phone: {{ facility_phone }}</p>
+<p>Doctors: {{ doctor_count }}</p>
+<p>Patients: {{ patient_count }}</p>
+<p>
+    <a href="/facilities/{{ facility.id }}/doctors/">View Doctors</a> |
+    <a href="/facilities/{{ facility.id }}/patients/">View Patients</a>
+</p>
+{% endblock %}

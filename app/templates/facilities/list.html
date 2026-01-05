@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Facilities ({{ total_facilities }})</h2>
+<ul>
+{% for item in facility_data %}
+    <li>
+        <a href="/facilities/{{ item.facility.id }}/">{{ item.facility.name }}</a>
+        - {{ item.patient_count }} patients
+        - {{ item.doctor_count }} doctors
+    </li>
+{% empty %}
+    <li>No facilities found.</li>
+{% endfor %}
+</ul>
+{% endblock %}

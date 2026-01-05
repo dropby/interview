@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Doctors at {{ facility.name }}</h2>
+<ul>
+{% for d in doctor_list %}
+    <li>{{ d.username }} - {{ d.email }}</li>
+{% empty %}
+    <li>No doctors at this facility.</li>
+{% endfor %}
+</ul>
+{% endblock %}

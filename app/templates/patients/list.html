@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patients</h2>
+<form action="/patients/search/" method="get">
+    <input type="text" name="name" placeholder="Search by name">
+    <input type="text" name="facility" placeholder="Facility name">
+    <button type="submit">Search</button>
+</form>
+<ul>
+{% for patient in patients %}
+    <li>
+        <a href="/patients/{{ patient.id }}/">{{ patient.name }}</a>
+        - Age: {{ patient.age }}
+        - Facility: {{ patient.facility_name }}
+        - Doctor: {{ patient.doctor_name }}
+    </li>
+{% empty %}
+    <li>No patients found.</li>
+{% endfor %}
+</ul>
+{% endblock %}

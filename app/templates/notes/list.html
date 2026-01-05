@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patient Notes</h2>
+<ul>
+{% for note in notes %}
+    <li>
+        <a href="/notes/{{ note.id }}/">{{ note.patient_name }}</a>
+        - {{ note.note_date }}
+        - by {{ note.created_by }}
+    </li>
+{% empty %}
+    <li>No notes found.</li>
+{% endfor %}
+</ul>
+{% endblock %}
